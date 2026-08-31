@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Settings</class>
+ <widget class="QDialog" name="Settings">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>452</width>
+    <height>340</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="windowTitle">
+   <string>JishoLookup config</string>
+  </property>
+  <property name="modal">
+   <bool>true</bool>
+  </property>
+  <layout class="QGridLayout" name="outerGrid">
+   <item row="6" column="3">
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="0" colspan="2">
+    <widget class="QLabel" name="version">
+     <property name="text">
+      <string>V 1.0.0</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="0" rowspan="4" colspan="4">
+    <layout class="QGridLayout" name="gridLayout" rowstretch="0,0,0,0">
+     <property name="sizeConstraint">
+      <enum>QLayout::SetDefaultConstraint</enum>
+     </property>
+     <property name="verticalSpacing">
+      <number>3</number>
+     </property>
+     <!-- Row 0: Jisho shortcut -->
+     <item row="0" column="0">
+      <widget class="QLabel" name="jishoLabel">
+       <property name="toolTip">
+        <string>The keyboard shortcut for Jisho lookup</string>
+       </property>
+       <property name="text">
+        <string>Jisho shortcut</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QKeySequenceEdit" name="jishoTrigger">
+       <property name="toolTip">
+        <string>Left-click and choose key combo, then hit enter</string>
+       </property>
+      </widget>
+     </item>
+     <!-- Row 1: Wikipedia shortcut -->
+     <item row="1" column="0">
+      <widget class="QLabel" name="wikipediaLabel">
+       <property name="toolTip">
+        <string>The keyboard shortcut for Wikipedia lookup (fallback)</string>
+       </property>
+       <property name="text">
+        <string>Wikipedia shortcut</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QKeySequenceEdit" name="wikipediaTrigger">
+       <property name="toolTip">
+        <string>Left-click and choose key combo, then hit enter</string>
+       </property>
+      </widget>
+     </item>
+     <!-- Row 2: Language -->
+     <item row="2" column="0">
+      <widget class="QLabel" name="languageLabel">
+       <property name="toolTip">
+        <string>The language wiki in which the add-on will look up the selected word(s)</string>
+       </property>
+       <property name="text">
+        <string>Wikipedia language</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QComboBox" name="languageSelector">
+       <property name="toolTip">
+        <string>The language wiki in which the add-on will look up the selected word(s)</string>
+       </property>
+       <property name="currentIndex">
+        <number>-1</number>
+       </property>
+       <property name="maxVisibleItems">
+        <number>10</number>
+       </property>
+      </widget>
+     </item>
+     <!-- Row 3: Only trigger if card flipped -->
+     <item row="3" column="0">
+      <widget class="QLabel" name="backsideLabel">
+       <property name="toolTip">
+        <string>Whether to always show the lookup pop-up or only when card is flipped</string>
+       </property>
+       <property name="text">
+        <string>Only trigger if card is flipped?</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="1">
+      <widget class="QCheckBox" name="checkBox">
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item row="5" column="1" colspan="3">
+    <widget class="QLabel" name="infoLabel">
+     <property name="contextMenuPolicy">
+      <enum>Qt::NoContextMenu</enum>
+     </property>
+     <property name="text">
+      <string>For changes to apply, please reinitialize deck (go back to deck picker and reopen your study deck)</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>Settings</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>248</x>
+     <y>254</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>157</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>Settings</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>316</x>
+     <y>260</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>286</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

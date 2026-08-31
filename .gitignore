@@ -1,0 +1,31 @@
+﻿# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Backup files
+*.bak
+*.tmp
+*~
+*.swp
+*.swo
+
+# IDE / Editor files
+.vscode/
+.idea/
+*.iml
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Anki add-on specific
+*.ankiaddon
+*.zip
+
+# Temporary test files
+test_*.py
+*_test.py
+debug_*.log

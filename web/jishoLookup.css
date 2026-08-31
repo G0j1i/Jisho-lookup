@@ -1,0 +1,142 @@
+/* ── Jisho result popup ─────────────────────────────── */
+.jisho-result {
+  padding: 0;
+  min-width: 250px;
+  max-width: 400px;
+  font-family: 'Roboto', -apple-system, Arial, sans-serif;
+  line-height: 1.5;
+}
+
+/* ── Wikipedia fallback popup ────────────────────────── */
+.tippy-wiki {
+  padding: 0;
+  min-width: 250px;
+  max-width: 400px;
+  font-family: 'Roboto', -apple-system, Arial, sans-serif;
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+}
+
+.wiki-thumb {
+  width: calc(100% - 1.2em);
+  max-width: 100%;
+  margin: 0.6em auto 0.2em;
+  border-radius: 4px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+
+.tippy-wiki-blurb {
+  padding: 0.4em 0.8em 0.8em;
+  text-align: left;
+  font-size: 0.92rem;
+  color: var(--text-primary, #1e1e1e);
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.tippy-wiki-blurb p {
+  margin: 0.3em 0;
+}
+
+.tippy-wiki-blurb a {
+  color: var(--text-accent, #4a7fa8);
+  text-decoration: none;
+}
+.tippy-wiki-blurb a:hover {
+  text-decoration: underline;
+}
+
+/* ── Tippy themes ────────────────────────────────────── */
+.tippy-box[data-theme~=jisholight] {
+  background-color: white;
+  box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.3);
+  padding: 0;
+  font-size: 16px;
+  color: black;
+  cursor: pointer;
+  min-width: 250px;
+  min-height: 100px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+[data-theme~=jisholight] .tippy-arrow {
+  color: white;
+}
+
+[data-theme~=jisholight] .tippy-content {
+  padding: 0;
+}
+
+.tippy-box[data-theme~=jishodark] {
+  background-color: #241d22;
+  box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.3);
+  padding: 0;
+  font-size: 16px;
+  color: white;
+  cursor: pointer;
+  min-width: 250px;
+  min-height: 100px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+[data-theme~=jishodark] .tippy-arrow {
+  color: #241d22;
+}
+
+[data-theme~=jishodark] .tippy-content {
+  padding: 0;
+}
+
+/* ── Dark mode overrides for Wikipedia blurb ────────── */
+[data-theme~=jishodark] .tippy-wiki-blurb {
+  color: #e8e0d0;
+}
+[data-theme~=jishodark] .tippy-wiki-blurb a {
+  color: #7a9fc8;
+}
+
+/* ── Loading state ────────────────────────────────────── */
+.jisho-loading {
+  padding: 1em;
+  text-align: center;
+  font-size: 0.95rem;
+  color: var(--text-secondary, #888);
+}
+
+/* ── Animation ────────────────────────────────────────── */
+.tippy-box[data-animation=scale-extreme][data-placement^=top] {
+  transform-origin: bottom;
+}
+.tippy-box[data-animation=scale-extreme][data-placement^=bottom] {
+  transform-origin: top;
+}
+.tippy-box[data-animation=scale-extreme][data-placement^=left] {
+  transform-origin: right;
+}
+.tippy-box[data-animation=scale-extreme][data-placement^=right] {
+  transform-origin: left;
+}
+.tippy-box[data-animation=scale-extreme][data-state=hidden] {
+  transform: scale(0);
+  opacity: .25;
+}
+
+/* ── Temp element (position anchor) ──────────────────── */
+#temp {
+  top: 0;
+  left: 0;
+  position: absolute;
+  pointer-events: none;
+  z-index: 5;
+  opacity: 0;
+}
+
+.jisho-loading {
+  padding: 1em;
+  text-align: center;
+  font-size: 0.95rem;
+  color: var(--text-secondary, #888);
+}
