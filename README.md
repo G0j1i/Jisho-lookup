@@ -1,6 +1,6 @@
 # JishoLookup
 
-A fork of [WikiLookup](https://ankiweb.net/shared/info/1516720487) by [Original Author].
+A fork of [WikiLookup](https://ankiweb.net/shared/info/1516720487).
 
 **Changes:**
 - Replaced Wikipedia API with Jisho API for Japanese lookup
